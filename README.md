@@ -10,7 +10,7 @@ go get https://github.com/laof/goport
 
 Import it with:
 ```
-go get https://github.com/laof/goport
+import "https://github.com/laof/goport"
 ```
 
 #### Example
