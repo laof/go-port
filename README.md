@@ -1,7 +1,8 @@
 ## goport
 
+Web server function, get IP and Port
 
-#### install
+#### Install
 
 Install the package with:
 ```
