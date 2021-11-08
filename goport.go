@@ -1,4 +1,4 @@
-package port
+package goport
 
 import (
 	"bufio"
