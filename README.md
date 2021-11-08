@@ -5,12 +5,12 @@
 
 Install the package with:
 ```
-go get https://github.com/laof/goport
+go get github.com/laof/goport
 ```
 
 Import it with:
 ```
-import "https://github.com/laof/goport"
+import "github.com/laof/goport"
 ```
 
 #### Example
