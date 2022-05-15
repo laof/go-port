@@ -1,23 +1,14 @@
 package goport
 
 import (
-	"bufio"
 	"fmt"
+	"math/rand"
 	"net"
-	"os"
+	"strconv"
+	"time"
 )
 
 func InputPort(str string) string {
-
-	fmt.Print("Port default is " + str + ", Input:")
-
-	in := bufio.NewScanner(os.Stdin)
-	if in.Scan() {
-		port := in.Text()
-		if len(port) >= 4 {
-			str = port
-		}
-	}
 
 	port := ":" + str
 
@@ -42,4 +33,10 @@ func GetIP() string {
 		}
 	}
 	return ip
+}
+
+func GetRandomCode() string {
+	rand.Seed(time.Now().UnixNano())
+	i := time.Now().UnixNano() - rand.Int63n(3000)
+	return strconv.FormatInt(i, 10)
 }
