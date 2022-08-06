@@ -13,15 +13,19 @@ func InputPort(str string) string {
 	port := ":" + str
 
 	fmt.Println("http://localhost" + port)
-	fmt.Println("http://" + GetIP() + port)
+
+	for _, val := range GetIP() {
+		fmt.Println("http://" + val + port)
+	}
 
 	return str
 }
 
-func GetIP() string {
+func GetIP() []string {
+	ips := []string{}
 	addrs, err := net.InterfaceAddrs()
 	if err != nil {
-		return ""
+		return ips
 	}
 	for _, addr := range addrs {
 		ipAddr, ok := addr.(*net.IPNet)
@@ -34,9 +38,9 @@ func GetIP() string {
 		if !ipAddr.IP.IsGlobalUnicast() {
 			continue
 		}
-		return ipAddr.IP.String()
+		ips = append(ips, ipAddr.IP.String())
 	}
-	return ""
+	return ips
 
 }
 
